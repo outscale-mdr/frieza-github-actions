@@ -16,7 +16,7 @@ jobs:
           region: ${{ secrets.OSC_REGION }}
     - uses: actions/setup-python@v3
     - name: Install osc-cli and jq
-      run:
+      run: |
         python3 -m pip install osc-sdk
         apt install jq
     - name: Create default profile
@@ -28,6 +28,6 @@ jobs:
         OSC_SECRET_KEY: ${secrets.OSC_SECRET_KEY}
         OSC_REGION: ${secrets.OSC_REGION}
     - name: Create resources
-      run:
+      run: |
         osc-cli api CreateKeypair --KeypairName "toto"
      
