@@ -10,6 +10,10 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - uses: ./frieza-clean
+      with:
+          access_key: ${{ secrets.OSC_ACCESS_KEY }}
+          secret_key: ${{ secrets.OSC_SECRET_KEY }}
+          region: ${{ secrets.OSC_REGION }}
     - uses: actions/setup-python@v3
     - name: Install osc-cli and jq
       run:
