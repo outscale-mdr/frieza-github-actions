@@ -29,5 +29,5 @@ jobs:
         OSC_REGION: ${{secrets.OSC_REGION}}
     - name: Create resources
       run: |
-        osc-cli api CreateKeypair --KeypairName "toto"
+        osc-cli api CreateKeypair --KeypairName $GITHUB_SHA
      
