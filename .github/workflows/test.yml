@@ -18,7 +18,7 @@ jobs:
     - name: Install osc-cli and jq
       run: |
         python3 -m pip install osc-sdk
-        apt install jq
+        sudo apt install jq
     - name: Create default profile
       run: | 
         mkdir -p $HOME/.osc
