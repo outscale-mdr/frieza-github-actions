@@ -3,6 +3,8 @@ name: Test
 on:
   pull_request_target:
     branches: [ master ]
+  workflow_dispatch:
+    
 
 jobs:
   frieza-clean:
@@ -18,6 +20,7 @@ jobs:
           access_key: ${{ secrets.OSC_ACCESS_KEY }}
           secret_key: ${{ secrets.OSC_SECRET_KEY }}
           region: ${{ secrets.OSC_REGION }}
+          error_on_dirty: true
     - uses: actions/setup-python@v3
     - name: Install osc-cli and jq
       run: |
